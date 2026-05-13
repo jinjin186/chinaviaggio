@@ -610,8 +610,9 @@
   .map-header h3 {
     font-family: var(--serif-display);
     font-weight: 400; font-style: italic;
-    font-size: 42px; margin: 0 0 4px;
+    font-size: clamp(22px, 5vw, 42px); margin: 0 0 4px;
     line-height: 1.1;
+    white-space: nowrap;
   }
   .map-han {
     font-family: var(--serif-display);
@@ -865,10 +866,10 @@ prepared for friends from Rome.</p>
 
     <!-- Map frame — red border, standalone -->
     <div class="map-frame">
-    <svg class="map-svg" viewBox="0 0 760 427" xmlns="http://www.w3.org/2000/svg" aria-label="Map of China with our four stops">
+    <svg class="map-svg" viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" aria-label="Map of China with our four stops">
       <!-- decorative outer rule -->
-      <rect x="6" y="6" width="748" height="415" fill="none" stroke="rgba(26,20,16,0.18)" stroke-width="0.6"/>
-      <rect x="14" y="14" width="732" height="399" fill="none" stroke="rgba(26,20,16,0.10)" stroke-width="0.4"/>
+      <rect x="6" y="6" width="748" height="548" fill="none" stroke="rgba(26,20,16,0.18)" stroke-width="0.6"/>
+      <rect x="14" y="14" width="732" height="532" fill="none" stroke="rgba(26,20,16,0.10)" stroke-width="0.4"/>
 
       <!-- China silhouette (stylised) -->
       <path class="land" d="
@@ -947,7 +948,7 @@ prepared for friends from Rome.</p>
       </g>
 
       <!-- Vermillion seal cartouche (bottom right) -->
-      <g transform="translate(640, 388)">
+      <g transform="translate(640, 470)">
         <rect class="seal-box" x="-46" y="-26" width="92" height="52"/>
         <rect class="seal-box" x="-42" y="-22" width="84" height="44" opacity="0.5"/>
         <text class="seal-text" x="0" y="-2">A.D. 2026</text>
@@ -983,15 +984,15 @@ prepared for friends from Rome.</p>
 
       <!-- City: Mt Gongga (4) -->
       <g>
-        <line x1="354" y1="361" x2="248" y2="382" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <line x1="354" y1="361" x2="250" y2="450" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
         <circle class="pin" cx="354" cy="361" r="11"/>
         <text class="pin-num" x="354" y="361">4</text>
-        <text class="city-name" x="244" y="384" text-anchor="end">Mt Gongga</text>
-        <text class="city-han"  x="244" y="398" text-anchor="end">贡 嘎 山</text>
+        <text class="city-name" x="246" y="455" text-anchor="end">Mt Gongga</text>
+        <text class="city-han"  x="246" y="473" text-anchor="end">贡 嘎 山</text>
       </g>
 
       <!-- Legend -->
-      <g transform="translate(70, 406)">
+      <g transform="translate(70, 510)">
         <line x1="0" y1="0" x2="36" y2="0" class="route"/>
         <text class="legend-line" x="46" y="4">— our route</text>
         <circle class="pin" cx="120" cy="0" r="6"/>

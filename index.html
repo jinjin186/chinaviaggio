@@ -687,6 +687,79 @@
   .swatch:hover { transform: scale(1.08); }
   .swatch.active { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink); }
 
+  /* ── Mobile responsiveness (additive overrides) ─────────────────────── */
+  html, body { max-width: 100%; overflow-x: hidden; }
+  img, svg { max-width: 100%; height: auto; }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .sheet { padding: 32px 22px; }
+    .framed { padding: 26px 18px; }
+    .cover { padding: 56px 18px; }
+    .establishment { margin-bottom: 40px; }
+    .cover .tagline { font-size: 18px; margin: 26px 0 40px; }
+    .cover-meta { flex-wrap: wrap; gap: 16px 28px; }
+    .scroll-cue { bottom: 18px; }
+
+    .note { padding: 34px 0; }
+    .note-label { margin-bottom: 26px; }
+    .note-body {
+      font-size: 18px;
+      line-height: 1.75;
+      text-align: left;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .note-body .dropcap { font-size: 60px; padding: 6px 10px 0 0; }
+    .note-sig { font-size: 20px; }
+
+    .course { padding: 40px 0; }
+    .course-header {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .course-kind { text-align: left; padding-bottom: 0; }
+    .course-rule { margin: 10px 0 8px; }
+    .course-numeral { font-size: 36px; }
+    .course h2 { letter-spacing: -0.005em; }
+    .course-sub { font-size: 18px; margin: 10px 0 22px; }
+    .course-sub .days {
+      display: inline-block;
+      margin-right: 10px;
+      padding-right: 10px;
+    }
+
+    .subsection-label { margin: 28px 0 14px; }
+    .item { padding: 14px 0; }
+    .item-name { white-space: normal; overflow-wrap: anywhere; }
+    .item-detail { white-space: normal; }
+
+    .gallery-label { gap: 10px; flex-wrap: wrap; }
+    .gallery { padding-bottom: 10px; }
+    .gallery .gallery-img { width: 78vw; max-width: 360px; }
+    .gallery .gallery-img.wide { width: 86vw; max-width: 420px; }
+
+    .practicals { font-size: 11px; }
+    .practicals > div { padding: 18px 18px; }
+    .practicals .val { font-size: 16px; }
+
+    .nota { padding: 44px 0; }
+    .nota h3 { font-size: 44px; }
+    .nota-sub { margin-bottom: 24px; }
+    .nota-grid { gap: 22px; }
+    .leg { grid-template-columns: 1fr; gap: 6px; }
+    .leg-mode { font-size: 10px; }
+    .budget-line { grid-template-columns: 1fr auto; row-gap: 6px; }
+    .budget-leader { display: none; }
+
+    .closing { padding: 52px 18px 48px; }
+    .closing-line { font-size: 26px; }
+    .closing-mono { letter-spacing: 0.26em; }
+
+    .tweaks { right: 12px; bottom: 12px; padding: 14px 14px 12px; min-width: 200px; }
+  }
+
 </style>
 </head>
 <body style="background-color: rgb(238, 216, 183)">
@@ -1438,6 +1511,13 @@ Nothing here is rushed. The portions are honest. Modifications are welcome.</p>
   .lang-toggle button.active { color: var(--accent); font-weight: 700; }
   .lang-toggle button:hover { color: var(--ink); }
   .lang-toggle .sep { color: var(--ink-faint); opacity: 0.5; }
+
+  /* Touch targets + small screens */
+  .lang-toggle button { touch-action: manipulation; }
+  @media (max-width: 720px) {
+    .lang-toggle { top: 12px; right: 12px; padding: 10px 12px; gap: 10px; }
+    .lang-toggle button { padding: 10px 10px; font-size: 12px; }
+  }
 </style>
 <script>
 (function(){

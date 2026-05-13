@@ -1,0 +1,1503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>China · A Tasting Menu — Aug 1–14, 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="image-slot.js"></script>
+
+<style>
+  :root {
+    --paper: #eed2b9;
+    --paper-edge: #e2c3a4;
+    --ink: #1a1410;
+    --ink-soft: #4a3f33;
+    --ink-faint: #8a7a64;
+    --rule: rgba(26, 20, 16, 0.28);
+    --rule-soft: rgba(26, 20, 16, 0.12);
+    --accent: oklch(0.40 0.10 25);     /* deep wine */
+    --accent-soft: oklch(0.40 0.10 25 / 0.12);
+    --seal: #9a2a1f;                   /* vermillion chop */
+
+    --serif-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
+    --serif-body: "EB Garamond", "Garamond", "Georgia", serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background:
+      /* faint 回纹 meander pattern */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='64' height='64'><g fill='none' stroke='%234a3f33' stroke-width='0.6' opacity='0.07'><path d='M4 60 V20 H44 V52 H20 V36 H36 V44 H28'/></g></svg>"),
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,20,16,0.05), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(26,20,16,0.06), transparent 60%),
+      var(--paper);
+    color: var(--ink);
+    font-family: var(--serif-body);
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Paper grain — extremely subtle noise via tiny SVG */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+    z-index: 1000;
+  }
+
+  .sheet {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 64px;
+    position: relative;
+  }
+
+  /* ── Cover ─────────────────────────────────────────────────────────── */
+  .cover {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 64px 32px;
+    position: relative;
+  }
+  .cover-inner { max-width: 640px; }
+
+  .establishment {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 56px;
+  }
+  .establishment .dot { display: inline-block; margin: 0 0.8em; opacity: 0.5; }
+
+  .cover h1 {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    font-size: clamp(56px, 9vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .cover h1 .ampersand {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .cover .han {
+    font-family: var(--serif-display);
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: 0.4em;
+    margin-left: 0.4em;
+    margin-top: 28px;
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .cover .tagline {
+    font-style: italic;
+    font-family: var(--serif-body);
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 36px 0 56px;
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .cover-meta .label { display: block; margin-bottom: 6px; opacity: 0.7; }
+  .cover-meta .value { color: var(--ink); font-size: 13px; letter-spacing: 0.12em; }
+
+  .cover-rule {
+    width: 80px;
+    height: 1px;
+    background: var(--ink);
+    margin: 40px auto;
+    opacity: 0.6;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    animation: fade 2.4s ease-in-out infinite;
+  }
+  @keyframes fade { 0%,100%{opacity:0.3} 50%{opacity:0.9} }
+
+  /* ── Opening note ──────────────────────────────────────────────────── */
+  .note {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 44px 0;
+    margin: 0 0 0 0;
+  }
+  .note-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .note-body {
+    font-family: var(--serif-body);
+    font-size: 21px;
+    line-height: 1.7;
+    color: var(--ink);
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+  .note-body .dropcap {
+    font-family: var(--serif-display);
+    font-size: 76px;
+    line-height: 0.85;
+    float: left;
+    padding: 8px 12px 0 0;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .note-body em { font-family: var(--serif-body); font-style: italic; }
+  .note-sig {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 22px;
+    margin-top: 32px;
+    text-align: right;
+    color: var(--ink-soft);
+  }
+
+  /* ── Course section ────────────────────────────────────────────────── */
+  .course {
+    padding: 52px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .course:last-of-type { border-bottom: none; }
+
+  .course-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 8px;
+  }
+  .course-numeral {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .course-kind {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+    padding-bottom: 8px;
+  }
+  .course-rule {
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.5;
+    margin-bottom: 14px;
+  }
+  .course h2 {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1;
+    margin: 12px 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .course h2 .han {
+    font-size: 0.5em;
+    color: var(--ink-soft);
+    letter-spacing: 0.3em;
+    margin-left: 0.4em;
+    vertical-align: 0.18em;
+  }
+  .course-sub {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+    margin: 8px 0 28px;
+  }
+  .course-sub .days {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 14px;
+    padding-right: 14px;
+    border-right: 1px solid var(--rule);
+  }
+
+  /* Subsection heading inside a course */
+  .subsection-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 36px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .subsection-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule-soft);
+  }
+
+  /* ── Menu items (dot leaders) ──────────────────────────────────────── */
+  .items { margin: 0; padding: 0; list-style: none; }
+  .item {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .item-main { flex: 0 1 auto; }
+  .item:first-child { border-top: none; }
+
+  .item-main {
+    display: flex;
+    align-items: baseline;
+    min-width: 0;
+  }
+  .item-name {
+    font-family: var(--serif-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .item-desc {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-left: 12px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .item-leader {
+    flex: 1;
+    align-self: end;
+    border-bottom: 1.5px dotted var(--ink-faint);
+    margin: 0 10px 8px;
+    height: 1px;
+    min-width: 24px;
+  }
+  .item-detail {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .item { grid-template-columns: 1fr; gap: 4px; }
+    .item-main { flex-wrap: wrap; }
+    .item-desc { white-space: normal; margin-left: 0; margin-top: 2px; flex-basis: 100%; }
+    .item-leader { display: none; }
+    .item-detail { padding-left: 0; }
+  }
+
+  /* ── Gallery ───────────────────────────────────────────────────────── */
+  .gallery-wrap { margin: 28px 0 20px; }
+  .gallery-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gallery-label .hint { font-style: normal; opacity: 0.55; }
+  .gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+    /* feather edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery .gallery-img {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 320px;
+    height: 220px;
+    background: var(--paper-edge);
+    box-shadow: 0 1px 0 rgba(26,20,16,0.05);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .gallery .gallery-img.wide    { width: 480px; height: 220px; }
+  .gallery .gallery-img.tall    { width: 220px; height: 280px; }
+  .gallery .gallery-img.portrait{ width: 240px; height: 320px; }
+  .gallery .gallery-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Practicals (weather + budget strip) ───────────────────────────── */
+  .practicals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin-top: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    background: rgba(255, 250, 240, 0.4);
+  }
+  .practicals > div { padding: 22px 26px; }
+  .practicals > div + div { border-left: 1px solid var(--rule); }
+  .practicals .key {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+  .practicals .val {
+    font-family: var(--serif-body);
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .practicals .val .num {
+    font-family: var(--serif-display);
+    font-style: italic;
+    color: var(--accent);
+  }
+  .practicals .val small {
+    display: block;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  @media (max-width: 640px) {
+    .practicals { grid-template-columns: 1fr; }
+    .practicals > div + div { border-left: none; border-top: 1px solid var(--rule); }
+  }
+
+  /* ── La Nota (logistics) ───────────────────────────────────────────── */
+  .nota {
+    padding: 52px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    margin-top: 24px;
+    position: relative;
+  }
+  .nota::before, .nota::after {
+    content: "";
+    position: absolute; left: 0; right: 0;
+    height: 1px; background: var(--ink); opacity: 0.4;
+  }
+  .nota::before { top: 4px; }
+  .nota::after { bottom: 4px; }
+
+  .nota h3 {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 56px;
+    margin: 0 0 8px;
+    text-align: center;
+  }
+  .nota-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .nota-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 720px) { .nota-grid { grid-template-columns: 1fr; } }
+
+  .nota h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .leg {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: 10px 0;
+    gap: 12px;
+  }
+  .leg-from {
+    font-family: var(--serif-display);
+    font-size: 18px;
+  }
+  .leg-from .arrow { color: var(--accent); margin: 0 8px; font-style: italic; }
+  .leg-mode {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .leg-mode .dur { color: var(--ink-faint); margin-left: 8px; }
+
+  .budget-line {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .budget-where { font-family: var(--serif-body); font-size: 17px; }
+  .budget-leader { border-bottom: 1.5px dotted var(--ink-faint); height: 1px; align-self: end; margin-bottom: 8px; min-width: 18px; }
+  .budget-amt {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .budget-amt .accent { color: var(--accent); font-family: var(--serif-display); font-style: italic; font-size: 16px; }
+  .budget-total {
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink);
+    font-family: var(--serif-display);
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .budget-total .label { font-style: italic; }
+  .budget-total .v { color: var(--accent); }
+  .budget-note {
+    font-family: var(--serif-body);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* ── Closing ───────────────────────────────────────────────────────── */
+  .closing {
+    text-align: center;
+    padding: 60px 32px 56px;
+  }
+  .closing-mark {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 40px;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .closing-line {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--ink);
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .closing-mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 36px;
+  }
+
+  /* ── 古风 ornamental frame for major sheets ─────────────────────────── */
+  .framed {
+    position: relative;
+    padding: 36px 40px;
+    border: 1px solid var(--rule);
+    background: linear-gradient(rgba(255,250,240,0.35), rgba(255,250,240,0.35));
+  }
+  .framed::before, .framed::after {
+    content: ""; position: absolute; pointer-events: none;
+  }
+  .framed::before {
+    inset: 6px; border: 1px solid var(--rule-soft);
+  }
+  /* corner brackets — 角花 */
+  .corner {
+    position: absolute; width: 28px; height: 28px;
+    border: 2px solid var(--accent); opacity: 0.85;
+  }
+  .corner.tl { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+  .corner.tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+  .corner.bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+  .corner.br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+  .corner::after {
+    content: ""; position: absolute; width: 8px; height: 8px;
+    background: var(--accent); border-radius: 50%;
+  }
+  .corner.tl::after { top: 6px; left: 6px; }
+  .corner.tr::after { top: 6px; right: 6px; }
+  .corner.bl::after { bottom: 6px; left: 6px; }
+  .corner.br::after { bottom: 6px; right: 6px; }
+
+  /* ── The Map (route in four cities) ─────────────────────────────────── */
+  .map-section { padding: 44px 0; }
+  .map-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .map-header .label {
+    font-family: var(--mono);
+    font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 14px;
+  }
+  .map-header h3 {
+    font-family: var(--serif-display);
+    font-weight: 400; font-style: italic;
+    font-size: 44px; margin: 0;
+  }
+  .map-header h3 .han {
+    font-style: normal; font-size: 0.55em; color: var(--ink-soft);
+    letter-spacing: 0.3em; margin-left: 0.4em; vertical-align: 0.15em;
+  }
+  .map-header .tagline {
+    font-style: italic; color: var(--ink-soft); margin-top: 10px;
+  }
+  .map-svg { display: block; width: 100%; height: auto; margin: 0 auto; }
+  .map-svg .land { fill: rgba(26,20,16,0.07); stroke: var(--ink-soft); stroke-width: 1.2; stroke-linejoin: round; }
+  .map-svg .border-soft { fill: none; stroke: var(--ink-faint); stroke-width: 0.6; stroke-dasharray: 2 3; opacity: 0.6; }
+  .map-svg .route { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 4 5; }
+  .map-svg .pin { fill: var(--seal); stroke: var(--paper); stroke-width: 2.2; }
+  .map-svg .pin-num { fill: var(--paper); font-family: var(--serif-display); font-size: 12px; font-style: italic; text-anchor: middle; dominant-baseline: central; }
+  .map-svg .city-name { font-family: var(--serif-display); font-size: 18px; fill: var(--ink); }
+  .map-svg .city-han  { font-family: var(--serif-display); font-size: 12px; fill: var(--ink-soft); letter-spacing: 0.18em; }
+  .map-svg .legend-line { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; fill: var(--ink-faint); }
+  .map-svg .compass-ring { fill: none; stroke: var(--ink-soft); stroke-width: 0.8; }
+  .map-svg .compass-tick { stroke: var(--ink-soft); stroke-width: 0.8; }
+  .map-svg .compass-n { font-family: var(--serif-display); font-style: italic; font-size: 12px; fill: var(--ink); text-anchor: middle; }
+  .map-svg .seal-text { font-family: var(--serif-display); font-size: 11px; fill: var(--seal); letter-spacing: 0.4em; text-anchor: middle; }
+  .map-svg .seal-box { fill: none; stroke: var(--seal); stroke-width: 1.4; }
+
+  /* ── Section divider ornament (between courses) ─────────────────────── */
+  .ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin: 0;
+    font-family: var(--serif-display);
+    font-style: italic;
+    color: var(--accent);
+    opacity: 0.85;
+  }
+  .ornament::before, .ornament::after {
+    content: ""; height: 1px; background: var(--rule); flex: 1; max-width: 120px;
+  }
+
+  /* ── Tweaks panel (paper + accent) ──────────────────────────────────── */
+  .tweaks {
+    position: fixed; bottom: 20px; right: 20px;
+    z-index: 9999;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 18px 20px 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: none;
+    min-width: 220px;
+  }
+  .tweaks.on { display: block; }
+  .tweaks h5 {
+    margin: 0 0 14px; font-size: 10px; letter-spacing: 0.32em;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .tweaks h5 .close { cursor: pointer; opacity: 0.5; font-family: var(--serif-display); text-transform: none; font-size: 18px; letter-spacing: 0; }
+  .tweaks h5 .close:hover { opacity: 1; }
+  .tweaks .row { margin-bottom: 14px; }
+  .tweaks .row:last-child { margin-bottom: 0; }
+  .tweaks .label { color: var(--ink-faint); margin-bottom: 8px; font-size: 9px; }
+  .swatches { display: flex; gap: 8px; }
+  .swatch {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid var(--rule); cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .swatch:hover { transform: scale(1.08); }
+  .swatch.active { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink); }
+
+</style>
+</head>
+<body style="background-color: rgb(238, 216, 183)">
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<section class="cover" data-screen-label="01 Cover">
+  <div class="cover-inner">
+    <div class="establishment">
+      Carte du Voyage <span class="dot">•</span> Aug MMXXVI <span class="dot">•</span> No. 01
+    </div>
+
+    <h1 data-it="Cina <span class='ampersand'>&</span><br>i suoi appetiti">China <span class="ampersand">&</span><br/>her appetites</h1>
+    <div class="han">中 国 风 味</div>
+
+    <p class="tagline" data-it="Un menù degustazione in quattro portate, preparato per amici romani.">A tasting menu in four courses,
+prepared for friends from Rome.</p>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-meta">
+      <div>
+        <span class="value" data-it="Autentico">Authentic</span>
+      </div>
+      <div>
+        <span class="value" data-it="Flessibile">Flexible</span>
+      </div>
+      <div>
+        <span class="value" data-it="Senza pensieri">Worry‑free</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" data-it="Scorri per accomodarti ↓">Scroll to be seated ↓</div>
+</section>
+
+<!-- ═══════════════════ OPENING NOTE ═══════════════════ -->
+<div class="sheet">
+  <section class="note" data-screen-label="02 Note">
+    <div class="note-label" data-it="— Una parola dalla cucina —" style="font-size: 16px">— A word from the kitchen —</div>
+    <p class="note-body" data-it="<span class='dropcap'>L</span>a Cina è troppo vasta per una sola visita, e la scelta di cosa vedere può diventare una paralisi tutta sua. Con <em>tredici giorni</em>, <em>sei viaggiatori</em>, e una netta preferenza per le strade meno battute, ho smesso di progettare un tour. Ho disegnato invece un menu — quattro portate, in sequenza per un palato che evolve.<br><br>Iniziamo dolcemente a <em>Shanghai</em>, dove Oriente e Occidente dialogano da duecento anni; è l'introduzione più gentile possibile. Una prima portata segue a <em>Xi'an</em> — la Roma d'Oriente, un'antica capitale imperiale che voi, cari romani, riconoscerete nelle ossa. Il piatto principale si svolge in <em>Sichuan</em>: panda a Chengdu, poi su tra le pendici del <em>Monte Gongga</em>, dove vi attendono ghiacciai, monasteri e funghi selvatici. Torniamo a Chengdu per il dolce — notti tarde nei cortili, musica dal vivo, un ultimo hotpot se ne abbiamo ancora la forza.<br><br>Niente qui ha fretta. Le porzioni sono oneste. Le modifiche sono benvenute.">C
+hina is too vast for a single visit, and the choice of what to see can quickly become its own kind of paralysis. With 14 days, 8 travellers, and a preference for the road less crowded and more authentic, I designed a travel menu — four courses, sequenced for an evolving palate.
+
+We begin softly in Shanghai, where East and West have been in conversation for two hundred years; it is the gentlest possible introduction. A first course follows in Xi'an — the eastern Rome, an imperial capital that you, dear Romans, will recognise in the bones. Our main course unfolds in Sichuan: pandas in Chengdu, then high into the foothills of Mount Gongga, where glaciers, monasteries, and wild mushrooms wait. We return to Chengdu for dessert — late nights in courtyards, live music, one last hotpot if we have it in us.
+
+Nothing here is rushed. The portions are honest. Modifications are welcome.</p>
+    <p class="note-sig" data-it="— la casa">— the house</p>
+  </section>
+</div>
+
+<!-- ═══════════════════ THE MAP ═══════════════════ -->
+<div class="sheet">
+  <section class="map-section framed" data-screen-label="03 Map">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+
+    <div class="map-header">
+      <div class="label" data-it="— L’Itinerario ——">— The Route ——</div>
+      <h3 data-it="Quattro tappe, un arco <span class='han'>行 程 图</span>">Four stops, one arc <span class="han">行 程 图</span></h3>
+      <p class="tagline" data-it="Dalla costa orientale al cuore imperiale, poi a ovest verso le montagne.">East coast inland to imperial heart, then west into the mountains.</p>
+    </div>
+
+    <svg class="map-svg" viewBox="0 0 760 580" xmlns="http://www.w3.org/2000/svg" aria-label="Map of China with our four stops">
+      <!-- decorative outer rule -->
+      <rect x="6" y="6" width="748" height="568" fill="none" stroke="rgba(26,20,16,0.18)" stroke-width="0.6"/>
+      <rect x="14" y="14" width="732" height="552" fill="none" stroke="rgba(26,20,16,0.10)" stroke-width="0.4"/>
+
+      <!-- China silhouette (stylised) -->
+      <path class="land" d="
+        M 748 80
+        L 700 130
+        L 645 175
+        L 625 200
+        L 615 240
+        L 601 278
+        L 595 310
+        L 588 355
+        L 560 400
+        L 539 448
+        L 503 478
+        L 454 494
+        L 444 520
+        L 425 540
+        L 410 528
+        L 405 500
+        L 392 494
+        L 360 488
+        L 331 494
+        L 307 478
+        L 294 430
+        L 290 390
+        L 270 388
+        L 233 386
+        L 200 380
+        L 170 370
+        L 135 355
+        L 110 345
+        L 86 324
+        L 50 285
+        L 25 247
+        L 5 220
+        L 0 200
+        L 14 175
+        L 37 169
+        L 60 145
+        L 86 123
+        L 130 90
+        L 172 62
+        L 220 50
+        L 270 46
+        L 330 38
+        L 392 31
+        L 460 22
+        L 515 15
+        L 580 15
+        L 637 15
+        L 690 35
+        L 720 55
+        L 748 80 Z" />
+
+      <!-- Hainan (small island) -->
+      <ellipse class="land" cx="420" cy="556" rx="16" ry="10"/>
+
+      <!-- soft inner provincial hint -->
+      <path class="border-soft" d="M 250 150 Q 320 180 370 230 T 450 320 T 540 350"/>
+      <path class="border-soft" d="M 150 280 Q 220 280 280 290 T 400 300"/>
+
+      <!-- Journey route (Shanghai → Xi'an → Chengdu → Gongga) -->
+      <path class="route" d="M 595 335 Q 500 298 415 272 Q 395 305 381 344 Q 367 352 354 361"/>
+
+      <!-- Compass rose (top left) -->
+      <g transform="translate(70, 100)">
+        <circle class="compass-ring" r="22"/>
+        <circle class="compass-ring" r="14"/>
+        <line class="compass-tick" x1="0" y1="-22" x2="0" y2="-30"/>
+        <line class="compass-tick" x1="0" y1="22" x2="0" y2="30"/>
+        <line class="compass-tick" x1="-22" y1="0" x2="-30" y2="0"/>
+        <line class="compass-tick" x1="22" y1="0" x2="30" y2="0"/>
+        <polygon points="0,-18 5,0 0,18 -5,0" fill="rgba(26,20,16,0.18)" stroke="var(--ink-soft)" stroke-width="0.6"/>
+        <polygon points="0,-18 5,0 0,0" fill="var(--ink-soft)"/>
+        <text class="compass-n" x="0" y="-36">N</text>
+      </g>
+
+      <!-- Vermillion seal cartouche (bottom right) -->
+      <g transform="translate(640, 470)">
+        <rect class="seal-box" x="-46" y="-26" width="92" height="52"/>
+        <rect class="seal-box" x="-42" y="-22" width="84" height="44" opacity="0.5"/>
+        <text class="seal-text" x="0" y="-2">A.D. 2026</text>
+        <text class="seal-text" x="0" y="16" style="font-size:9px; letter-spacing:0.3em;">AUG · MMXXVI</text>
+      </g>
+
+      <!-- City: Shanghai (1) -->
+      <g>
+        <line x1="595" y1="335" x2="650" y2="335" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <circle class="pin" cx="595" cy="335" r="11"/>
+        <text class="pin-num" x="595" y="335">1</text>
+        <text class="city-name" x="660" y="332">Shanghai</text>
+        <text class="city-han"  x="660" y="350">上 海</text>
+      </g>
+
+      <!-- City: Xi'an (2) -->
+      <g>
+        <line x1="415" y1="272" x2="415" y2="224" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <circle class="pin" cx="415" cy="272" r="11"/>
+        <text class="pin-num" x="415" y="272">2</text>
+        <text class="city-name" x="415" y="218" text-anchor="middle">Xi'an</text>
+        <text class="city-han"  x="415" y="204" text-anchor="middle">西 安</text>
+      </g>
+
+      <!-- City: Chengdu (3) -->
+      <g>
+        <line x1="381" y1="344" x2="320" y2="395" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <circle class="pin" cx="381" cy="344" r="11"/>
+        <text class="pin-num" x="381" y="344">3</text>
+        <text class="city-name" x="316" y="400" text-anchor="end">Chengdu</text>
+        <text class="city-han"  x="316" y="418" text-anchor="end">成 都</text>
+      </g>
+
+      <!-- City: Mt Gongga (4) -->
+      <g>
+        <line x1="354" y1="361" x2="250" y2="450" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <circle class="pin" cx="354" cy="361" r="11"/>
+        <text class="pin-num" x="354" y="361">4</text>
+        <text class="city-name" x="246" y="455" text-anchor="end">Mt Gongga</text>
+        <text class="city-han"  x="246" y="473" text-anchor="end">贡 嘎 山</text>
+      </g>
+
+      <!-- Legend -->
+      <g transform="translate(70, 510)">
+        <line x1="0" y1="0" x2="36" y2="0" class="route"/>
+        <text class="legend-line" x="46" y="4">— our route</text>
+        <circle class="pin" cx="120" cy="0" r="6"/>
+        <text class="legend-line" x="134" y="4">— a stop</text>
+      </g>
+    </svg>
+
+    <div class="ornament" style="margin-top:32px">— ✦ —</div>
+  </section>
+</div>
+
+<!-- ═══════════════════ COURSE I · SHANGHAI ═══════════════════ -->
+<div class="sheet">
+  <section class="course" data-screen-label="04 Shanghai">
+    <div class="course-header">
+      <div class="course-numeral">I.</div>
+      <div class="course-rule"></div>
+      <div class="course-kind" data-it="Antipasto">Amuse‑bouche</div>
+    </div>
+    <h2>Shanghai <span class="han">上 海</span></h2>
+    <p class="course-sub" data-it="<span class='days'>2–3 giorni</span> dove Oriente e Occidente si sono incontrati, e hanno imparato a danzare">
+      <span class="days">2–3 days</span>
+      where East met West, and learned to dance
+    </p>
+
+    <ul class="items">
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Il Bund">The Bund</span>
+          <span class="item-desc" data-it="facciate coloniali, skyline di Pudong dirimpetto">colonial façades, Pudong skyline opposite</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="sera · passeggiata">evening · stroll</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Giardino Yuyuan & Tempio del Dio della Città">Yuyuan Garden &amp; City God Temple</span>
+          <span class="item-desc" data-it="una fantasia Ming, di roccia e acqua">a Ming reverie, rock and water</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">half day</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Xintiandi · il quartiere Shikumen">Xintiandi · the Shikumen quarter</span>
+          <span class="item-desc" data-it="vecchie case di vicolo, cena lenta, una lunga serata">old lane houses, slow dinner, a long evening</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">night</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Zhujiajiao, città d’acqua">Zhujiajiao Water Town</span>
+          <span class="item-desc" data-it="canali, ponti di pietra, ravioli in riva">canals, stone bridges, dumplings by the water</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="gita di un giorno · 1 ora di strada">day trip · 1 hr out</span>
+      </li>
+    </ul>
+
+    <div class="gallery-wrap">
+      <div class="gallery-label">
+        <span>— Plated ——</span>
+        <span class="hint">drag photos in · swipe →</span>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-img portrait" id="sh-1"><img src="image/sh-.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-4"><img src="image/sh-IMG_1687.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-5"><img src="image/sh-IMG_1688.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-6"><img src="image/sh-IMG_1689.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-7"><img src="image/sh-IMG_1690.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-8"><img src="image/sh-IMG_1692.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-9"><img src="image/sh-IMG_1693.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-10"><img src="image/sh-IMG_1694.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="sh-11"><img src="image/sh-IMG_1695.JPG" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="practicals">
+      <div>
+        <div class="key">August Weather</div>
+        <div class="val"><span class="num">28 – 34°C</span><small data-it="caldo & umido · temporali pomeridiani · un ventaglio, un cappello e pazienza">hot &amp; humid · afternoon thunderstorms · a fan, a hat, and patience</small></div>
+      </div>
+      <div>
+        <div class="key">Per person · per day</div>
+        <div class="val"><span class="num">¥ 500 – 750</span><small data-it="≈ €64–96 · hotel comodo, tre pasti & snack, trasporti">≈ €64 – 96 · comfort hotel, three meals &amp; snacks, transit</small><span style="display:none"><small data-it="≈ €115–170 · hotel di fascia media, due pasti fuori, trasporti, un bar">≈ €90–170 · hotel di fascia media, due pasti fuori, trasporti, un bar</small></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ COURSE II · XI'AN ═══════════════════ -->
+<div class="sheet">
+  <section class="course" data-screen-label="05 Xian">
+    <div class="course-header">
+      <div class="course-numeral">II.</div>
+      <div class="course-rule"></div>
+      <div class="course-kind" data-it="Primo">Primo</div>
+    </div>
+    <h2>Xi'an <span class="han">西 安</span></h2>
+    <p class="course-sub" data-it="<span class='days'>3 giorni</span> la Roma d’Oriente — un’antica capitale imperiale, fin nelle ossa">
+      <span class="days">3 days</span>
+      the eastern Rome — an old imperial capital, in the bones
+    </p>
+
+    <ul class="items">
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="L’Esercito di Terracotta">The Terracotta Army</span>
+          <span class="item-desc" data-it="ottomila soldati · non avere fretta">eight thousand soldiers · do not rush this</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="tutta la mattina">full morning</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Le mura in bicicletta">City Walls by Bicycle</span>
+          <span class="item-desc" data-it="anello di 14 km · noleggio alla Porta Sud">14 km loop · rentals at the South Gate</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="tramonto · 2 ore">sunset · 2 hrs</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Il quartiere musulmano">The Muslim Quarter</span>
+          <span class="item-desc" data-it="spiedini d’agnello, noodles biáng biáng, dolci di cachi">lamb skewers, biáng biáng noodles, persimmon cakes</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="cena · tarda">dinner · late</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Pagoda della Grande Oca Selvatica">Big Wild Goose Pagoda</span>
+          <span class="item-desc" data-it="al crepuscolo, con le fontane danzanti">at dusk, with the musical fountains</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">evening</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Museo di Storia dello Shaanxi">Shaanxi History Museum</span>
+          <span class="item-desc" data-it="prenota in anticipo — i biglietti finiscono all’alba">book ahead — tickets vanish at dawn</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">half day</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Terme di Huaqing">Huaqing Hot Springs</span>
+          <span class="item-desc" data-it="il bagno dell'imperatrice, da unire all'Esercito sulla via">the empress's bath, paired with the Army en route</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="extra">add‑on</span>
+      </li>
+    </ul>
+
+    <div class="gallery-wrap">
+      <div class="gallery-label">
+        <span>— Plated ——</span>
+        <span class="hint">drag photos in · swipe →</span>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-img portrait" id="xa-1"><img src="image/xa-IMG_1701.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-2"><img src="image/xa-IMG_1702.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-3"><img src="image/xa-IMG_1703.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-4"><img src="image/xa-IMG_1704.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-5"><img src="image/xa-IMG_1705.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-6"><img src="image/xa-IMG_1706.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-7"><img src="image/xa-IMG_1707.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-8"><img src="image/xa-IMG_1708.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-9"><img src="image/xa-IMG_1709.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="xa-10"><img src="image/xa-IMG_1710.JPG" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="practicals">
+      <div>
+        <div class="key">August Weather</div>
+        <div class="val"><span class="num">25 – 33°C</span><small data-it="caldo secco, sere fresche · le mura al tramonto sono un regalo">dry heat, cool evenings · the wall at sunset is a gift</small></div>
+      </div>
+      <div>
+        <div class="key">Per person · per day</div>
+        <div class="val"><span class="num">¥ 350 – 600</span><small data-it="≈ €45–77 · locanda con cortile, tre pasti & snack">≈ €45 – 77 · courtyard inn, three meals &amp; snacks</small><span style="display:none"><small data-it="≈ €90–130 · piccola locanda con cortile, due pasti, un giorno con autista">≈ €90 – 130 · boutique courtyard inn, two meals, one driver day</small></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ COURSE III · CHENGDU + GONGGA ═══════════════════ -->
+<div class="sheet">
+  <section class="course" data-screen-label="06 Chengdu+Gongga">
+    <div class="course-header">
+      <div class="course-numeral">III.</div>
+      <div class="course-rule"></div>
+      <div class="course-kind" data-it="Secondo · il piatto principale">Secondo · the main</div>
+    </div>
+    <h2>Chengdu &amp; Gongga <span class="han">川 西</span></h2>
+    <p class="course-sub" data-it="<span class='days'>~ 7 giorni</span> i sapori si fanno più decisi · foreste di panda, poi una svolta verso le montagne">
+      <span class="days">~ 7 days</span>
+      the flavours grow bolder · panda forests, then a turn toward the mountains
+    </p>
+
+    <div class="subsection-label"><span data-it="A Chengdu">In Chengdu</span></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Centro di riproduzione dei panda">Panda Breeding Base</span>
+          <span class="item-desc" data-it="arriva all’apertura, prima del bambù">arrive at opening, before the bamboo</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="07:30 · mezza giornata">07:30 · half day</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Museo di Sanxingdui">Sanxingdui Museum</span>
+          <span class="item-desc" data-it="maschere di bronzo di un regno dimenticato">bronze masks from a forgotten kingdom</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="gita di un giorno · 1,5 ore di strada">day trip · 1.5 hrs out</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Vicoli di Kuanzhai">Kuanzhai Alley</span>
+          <span class="item-desc" data-it="tè, mahjong, pulizia delle orecchie se osi">tea, mahjong, ear‑cleaning if you dare</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">afternoon</span>
+      </li>
+    </ul>
+
+    <div class="subsection-label"><span data-it="Verso il Monte Gongga">Toward Mount Gongga</span></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Un trekking di più giorni">A multi‑day trek</span>
+          <span class="item-desc" data-it="alte vallate, cresta dopo cresta, un passo prudente">high valleys, ridge after ridge, a careful pace</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="3 – 4 giorni">3 – 4 days</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Monastero di Gongga">Gongga Monastery</span>
+          <span class="item-desc" data-it="muri bianchi sotto una vetta di 7.556 m">white walls under a 7,556 m peak</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="sulla via">en route</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Tè al burro tibetano">Tibetan butter tea</span>
+          <span class="item-desc" data-it="su invito, nella casa di un pastore">by invitation, in a herder's home</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="un’ora lenta">a slow hour</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Raccolta di funghi selvatici · jūnzi">Foraging wild mushrooms · jūnzi</span>
+          <span class="item-desc" data-it="agosto è la stagione — guida indispensabile">August is the season — guide essential</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">morning</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Parco del Ghiacciaio Hailuogou">Hailuogou Glacier Park</span>
+          <span class="item-desc" data-it="la lingua di ghiaccio che scende tra i pini">the ice tongue, descending into pine</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail">full day</span>
+      </li>
+    </ul>
+
+    <div class="gallery-wrap">
+      <div class="gallery-label">
+        <span>— Plated ——</span>
+        <span class="hint">drag photos in · swipe →</span>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-img portrait" id="cd-1"><img src="image/cd-IMG_1711.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-2"><img src="image/cd-IMG_1712.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-3"><img src="image/cd-IMG_1713_fixed.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-4"><img src="image/cd-IMG_1714.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-5"><img src="image/cd-IMG_1715_fixed.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-6"><img src="image/cd-IMG_1716.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-7"><img src="image/cd-IMG_1717_fixed.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-8"><img src="image/cd-IMG_1718.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-9"><img src="image/cd-IMG_1719_fixed.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="cd-10"><img src="image/cd-IMG_1720.JPG" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="practicals">
+      <div>
+        <div class="key">August Weather</div>
+        <div class="val"><span class="num">22 – 30°C</span><small data-it="Chengdu umida · Gongga 5–18°C, pioggia probabile · vestiti a strati, calze asciutte, una vera giacca">Chengdu humid · Gongga 5 – 18°C, rain likely · layers, dry socks, a real shell</small></div>
+      </div>
+      <div>
+        <div class="key">Per person · per day</div>
+        <div class="val"><span class="num">Chengdu ¥ 320 – 550 · Gongga ¥ 800 – 1,000</span><small data-it="≈ €41–71 a Chengdu · ≈ €100–120 a Gongga (alloggio + pasti + guida)">≈ €41 – 71 in Chengdu · ≈ €100 – 120 on Gongga (lodging + food + guide)</small><span style="display:none"><small data-it="≈ €140–200 · autista privato condiviso, rifugi di montagna, guida">≈ €140 – 200 · shared private driver, mountain lodges, guide</small></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ COURSE IV · DESSERT ═══════════════════ -->
+<div class="sheet">
+  <section class="course" data-screen-label="07 Chengdu Nights">
+    <div class="course-header">
+      <div class="course-numeral">IV.</div>
+      <div class="course-rule"></div>
+      <div class="course-kind" data-it="Dolce · il dessert">Dolce · the sweet</div>
+    </div>
+    <h2 data-it="Chengdu, dopo il tramonto <span class='han'>夜 成 都</span>">Chengdu, after dark <span class="han">夜 成 都</span></h2>
+    <p class="course-sub" data-it="<span class='days'>ultime 2 notti</span> un atterraggio dolce — cortili, musica dal vivo, un’ultima ciotola">
+      <span class="days">last 2 nights</span>
+      a soft landing — courtyards, live music, one last bowl
+    </p>
+
+    <ul class="items">
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Quartiere dei bar di Yulin">Yulin Bar Quarter</span>
+          <span class="item-desc" data-it="cocktail in un cortile, atmosfera di quartiere">cocktails in a courtyard, neighbourhood feel</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="prima sera">night one</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Jiuyanqiao · i bar lungo il fiume">Jiuyanqiao · the riverbank bars</span>
+          <span class="item-desc" data-it="musica indie dal vivo fino alle tre">live indie music until three</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="seconda sera">night two</span>
+      </li>
+      <li class="item">
+        <div class="item-main">
+          <span class="item-name" data-it="Un ultimo hotpot">A final hotpot</span>
+          <span class="item-desc" data-it="brodo mala, birra, un addio sincero">mala broth, beer, an honest goodbye</span>
+        </div>
+        <span class="item-leader"></span>
+        <span class="item-detail" data-it="se ce la fate">if you have it in you</span>
+      </li>
+    </ul>
+
+    <div class="gallery-wrap">
+      <div class="gallery-label">
+        <span>— Plated ——</span>
+        <span class="hint">drag photos in · swipe →</span>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-img portrait" id="nt-1"><img src="image/nt-IMG_1722.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="nt-2"><img src="image/nt-IMG_1723.JPG" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="nt-5"><img src="image/nt-IMG_1724_fixed.jpg" alt="" loading="lazy"></figure>
+        <figure class="gallery-img portrait" id="nt-6"><img src="image/nt-IMG_1725.JPG" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="practicals">
+      <div>
+        <div class="key">August Weather</div>
+        <div class="val"><span class="num">23 – 31°C</span><small data-it="sere calde · una camicia di lino è sufficiente">warm nights · a linen shirt is plenty</small></div>
+      </div>
+      <div>
+        <div class="key">Per person · per night</div>
+        <div class="val"><span class="num">¥ 150 – 300</span><small data-it="≈ €19–38 · drink & cibo a tarda notte, oltre la camera">≈ €19 – 38 · drinks &amp; late food, on top of the room</small><span style="display:none"><small data-it="≈ €50–100 · drink & cibo a tarda notte, oltre la camera">≈ €50 – 100 · drinks &amp; late food, on top of the room</small></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ LA NOTA ═══════════════════ -->
+<div class="sheet">
+  <section class="nota" data-screen-label="08 La Nota">
+    <h3>La Nota</h3>
+    <div class="nota-sub" data-it="— il conto & la logistica —">— the bill &amp; the logistics —</div>
+
+    <div class="nota-grid">
+      <div>
+        <h4 data-it="Tratte">Passages</h4>
+        <div class="leg">
+          <div class="leg-from">Shanghai <span class="arrow">→</span> Xi'an</div>
+          <div class="leg-mode" data-it="alta velocità <span class='dur'>~ 6 ore</span>">high‑speed rail <span class="dur">~ 6 hrs</span></div>
+        </div>
+        <div class="leg">
+          <div class="leg-from">Xi'an <span class="arrow">→</span> Chengdu</div>
+          <div class="leg-mode" data-it="volo <span class='dur'>~ 1 h 40</span>">flight <span class="dur">~ 1 hr 40</span></div>
+        </div>
+        <div class="leg">
+          <div class="leg-from">Chengdu <span class="arrow">→</span> Gongga</div>
+          <div class="leg-mode" data-it="autista privato <span class='dur'>~ 6 – 8 ore</span>">private driver <span class="dur">~ 6 – 8 hrs</span></div>
+        </div>
+        <div class="leg">
+          <div class="leg-from">Gongga <span class="arrow">→</span> Chengdu</div>
+          <div class="leg-mode" data-it="autista privato <span class='dur'>~ 6 ore</span>">private driver <span class="dur">~ 6 hrs</span></div>
+        </div>
+        <p class="budget-note" data-it="Un solo autista per il tratto di montagna, condiviso tra noi — la strada è troppo tortuosa per i bus e a noleggio non è realistico per gli stranieri.">A single driver for the mountain stretch, shared between us — the road is too winding for buses, and rental cars are not realistic for foreigners here.</p>
+      </div>
+
+      <div>
+        <h4 data-it="Budget · a persona">Budget · per person</h4>
+        <div class="budget-line">
+          <div class="budget-where" data-it="Shanghai · 3 giorni">Shanghai · 3 days</div>
+          <div class="budget-leader"></div>
+          <div class="budget-amt"><span class="accent">¥ 1,875</span> &nbsp; €240</div>
+        </div>
+        <div class="budget-line">
+          <div class="budget-where" data-it="Xi'an · 3 giorni">Xi'an · 3 days</div>
+          <div class="budget-leader"></div>
+          <div class="budget-amt"><span class="accent">¥ 1,425</span> &nbsp; €185</div>
+        </div>
+        <div class="budget-line">
+          <div class="budget-where" data-it="Chengdu + Gongga · 7 giorni">Chengdu + Gongga · 7 days</div>
+          <div class="budget-leader"></div>
+          <div class="budget-amt"><span class="accent">¥ 4,900</span> &nbsp; €625</div>
+        </div>
+        <div class="budget-line">
+          <div class="budget-where" data-it="Trasporti interni (treno + aereo)">Domestic transit (rail + flight)</div>
+          <div class="budget-leader"></div>
+          <div class="budget-amt"><span class="accent">¥ 1,800</span> &nbsp; €230</div>
+        </div>
+        <div class="budget-total">
+          <span class="label" data-it="Totale approssimativo">Approximate total</span>
+          <span class="v">¥ 10,000 · €1,280</span>
+        </div>
+        <p class="budget-note" data-it="Voli internazionali esclusi. Comfort di fascia media ovunque — hotel decenti nelle città, rifugi più semplici in montagna, e mai economia a tavola.">Excluding international flights. Mid‑range comfort throughout — proper hotels in the cities, simpler lodges on the mountain, no shortage at the table.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ CLOSING ═══════════════════ -->
+<section class="closing" data-screen-label="09 Closing">
+  <div class="closing-mark">✦</div>
+  <p class="closing-line" data-it="Modifiche à la carte<br>sono benvenute.">À la carte modifications<br/>warmly welcomed.</p>
+  <p class="closing-line" data-it="Ditemi cosa volete di più, di meno,<br>o cosa preferireste cambiare." style="font-style:normal; font-size: 22px; color: var(--ink-soft);">Tell me what you want more of, less of,<br/>or what you'd like to swap out.</p>
+  <div class="closing-mono">— end of menu — buon viaggio —</div>
+</section>
+
+<!-- ═══════════════════ TWEAKS ═══════════════════ -->
+<div class="tweaks" id="tweaks">
+  <h5>
+    <span>Tweaks</span>
+    <span class="close" id="tweaks-close">×</span>
+  </h5>
+  <div class="row">
+    <div class="label">Paper</div>
+    <div class="swatches" id="paper-swatches">
+      <div class="swatch active" data-paper="#f7f1e6" data-edge="#ede4d2" style="background:#f7f1e6;border-color:#ddd2bd"></div>
+      <div class="swatch" data-paper="#f5f0e3" data-edge="#e6dcc4" style="background:#f5f0e3;border-color:#dccfb1"></div>
+      <div class="swatch" data-paper="#f2ebe0" data-edge="#e2d6c2" style="background:#f2ebe0;border-color:#d6c7b0"></div>
+      <div class="swatch" data-paper="#1d1a16" data-edge="#2a251f" style="background:#1d1a16"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">Accent</div>
+    <div class="swatches" id="accent-swatches">
+      <div class="swatch active" data-accent="oklch(0.40 0.10 25)" style="background:oklch(0.40 0.10 25)"></div>
+      <div class="swatch" data-accent="oklch(0.42 0.10 145)" style="background:oklch(0.42 0.10 145)"></div>
+      <div class="swatch" data-accent="oklch(0.40 0.10 250)" style="background:oklch(0.40 0.10 250)"></div>
+      <div class="swatch" data-accent="oklch(0.55 0.12 60)" style="background:oklch(0.55 0.12 60)"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ───── Tweaks protocol ─────
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "paper": "#f2ebe0",
+    "paperEdge": "#e2d6c2",
+    "accent": "oklch(0.40 0.10 25)"
+  }/*EDITMODE-END*/;
+
+  const tweaksEl = document.getElementById('tweaks');
+  const root = document.documentElement;
+
+  function applyTweaks(t) {
+    root.style.setProperty('--paper', t.paper);
+    root.style.setProperty('--paper-edge', t.paperEdge);
+    root.style.setProperty('--accent', t.accent);
+    // Dark paper? Flip ink colors.
+    const isDark = isDarkColor(t.paper);
+    if (isDark) {
+      root.style.setProperty('--ink', '#f0e8d8');
+      root.style.setProperty('--ink-soft', '#cfc4ad');
+      root.style.setProperty('--ink-faint', '#8a7d65');
+      root.style.setProperty('--rule', 'rgba(240,232,216,0.22)');
+      root.style.setProperty('--rule-soft', 'rgba(240,232,216,0.10)');
+    } else {
+      root.style.setProperty('--ink', '#1a1410');
+      root.style.setProperty('--ink-soft', '#4a3f33');
+      root.style.setProperty('--ink-faint', '#8a7a64');
+      root.style.setProperty('--rule', 'rgba(26,20,16,0.22)');
+      root.style.setProperty('--rule-soft', 'rgba(26,20,16,0.10)');
+    }
+  }
+  function isDarkColor(hex) {
+    if (!hex.startsWith('#')) return false;
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    return (r*0.299 + g*0.587 + b*0.114) < 128;
+  }
+
+  let state = {...TWEAK_DEFAULTS};
+  applyTweaks(state);
+
+  function setTweak(updates) {
+    state = {...state, ...updates};
+    applyTweaks(state);
+    try { window.parent.postMessage({type:'__edit_mode_set_keys', edits: updates}, '*'); } catch(e){}
+  }
+
+  document.querySelectorAll('#paper-swatches .swatch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      document.querySelectorAll('#paper-swatches .swatch').forEach(s => s.classList.remove('active'));
+      sw.classList.add('active');
+      setTweak({ paper: sw.dataset.paper, paperEdge: sw.dataset.edge });
+    });
+  });
+  document.querySelectorAll('#accent-swatches .swatch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      document.querySelectorAll('#accent-swatches .swatch').forEach(s => s.classList.remove('active'));
+      sw.classList.add('active');
+      setTweak({ accent: sw.dataset.accent });
+    });
+  });
+
+  // Edit-mode bridge
+  window.addEventListener('message', (e) => {
+    const t = e.data && e.data.type;
+    if (t === '__activate_edit_mode')   tweaksEl.classList.add('on');
+    if (t === '__deactivate_edit_mode') tweaksEl.classList.remove('on');
+  });
+  document.getElementById('tweaks-close').addEventListener('click', () => {
+    tweaksEl.classList.remove('on');
+    try { window.parent.postMessage({type:'__edit_mode_dismissed'}, '*'); } catch(e){}
+  });
+  try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(e){}
+</script>
+
+
+<!-- ═══════════════════ LANG TOGGLE ═══════════════════ -->
+<div class="lang-toggle" id="lang-toggle" role="group" aria-label="language">
+  <button data-lang="en" class="active">EN</button>
+  <span class="sep">·</span>
+  <button data-lang="it">IT</button>
+</div>
+<style>
+  .lang-toggle {
+    position: fixed; top: 20px; right: 20px; z-index: 9998;
+    background: var(--paper); border: 1px solid var(--ink);
+    padding: 6px 10px; display: flex; gap: 6px; align-items: center;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .lang-toggle button {
+    background: none; border: 0; padding: 4px 6px; cursor: pointer;
+    font-family: inherit; font-size: 11px; letter-spacing: 0.2em;
+    color: var(--ink-faint); text-transform: uppercase;
+  }
+  .lang-toggle button.active { color: var(--accent); font-weight: 700; }
+  .lang-toggle button:hover { color: var(--ink); }
+  .lang-toggle .sep { color: var(--ink-faint); opacity: 0.5; }
+</style>
+<script>
+(function(){
+  // Runtime translator for repeated short strings (item-detail, .key, gallery labels, .days span, etc.)
+  const RUNTIME = {
+    // generic
+    'half day': 'mezza giornata',
+    'night': 'notte',
+    'evening': 'sera',
+    'morning': 'mattina',
+    'afternoon': 'pomeriggio',
+    'full day': 'giornata intera',
+    'add‑on': 'extra',
+    // practicals keys
+    'August Weather': 'Tempo ad agosto',
+    'Per person · per day': 'A persona · al giorno',
+    'Per person · per night': 'A persona · a notte',
+    // gallery
+    '— Plated ——': '— In tavola ——',
+    'drag photos in · swipe →': 'trascina le foto · scorri →',
+    // course-kind already handled, but be safe:
+    'Amuse‑bouche': 'Antipasto',
+  };
+  // Selectors to scan for runtime translations
+  const RUNTIME_SEL = '.item-detail, .practicals .key, .gallery-label span, .course-kind';
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-it]').forEach(el => {
+      if (!el.hasAttribute('data-en-orig')) {
+        el.setAttribute('data-en-orig', el.innerHTML);
+      }
+      el.innerHTML = (lang === 'it') ? el.getAttribute('data-it') : el.getAttribute('data-en-orig');
+    });
+    // runtime selectors: swap textContent based on RUNTIME map
+    document.querySelectorAll(RUNTIME_SEL).forEach(el => {
+      // skip if this element is already handled via data-it (it has data-en-orig)
+      if (el.hasAttribute('data-it')) return;
+      const en = el.getAttribute('data-en-runtime') || el.textContent;
+      if (!el.hasAttribute('data-en-runtime')) el.setAttribute('data-en-runtime', en);
+      if (lang === 'it' && RUNTIME[en]) {
+        el.textContent = RUNTIME[en];
+      } else {
+        el.textContent = en;
+      }
+    });
+    // Toggle button state
+    document.querySelectorAll('#lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    try { localStorage.setItem('menu_lang', lang); } catch(e){}
+  }
+  document.querySelectorAll('#lang-toggle button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+  let initial = 'en';
+  try { initial = localStorage.getItem('menu_lang') || 'en'; } catch(e){}
+  setLang(initial);
+})();
+</script>
+
+</body>
+</html>

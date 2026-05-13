@@ -686,6 +686,122 @@
   }
   .swatch:hover { transform: scale(1.08); }
   .swatch.active { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE  ≤ 640px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* ── 基础容器：收窄内边距 ── */
+  .sheet {
+    padding: 32px 20px;
+  }
+  .framed {
+    padding: 24px 18px;
+  }
+
+  /* ── 封面 ── */
+  .cover {
+    padding: 48px 20px;
+  }
+  .cover h1 {
+    font-size: clamp(44px, 14vw, 72px);
+  }
+  .cover .han {
+    font-size: clamp(18px, 5vw, 28px);
+    letter-spacing: 0.25em;
+  }
+  .cover .tagline {
+    font-size: 16px;
+    margin: 20px 0 36px;
+  }
+  .cover-meta {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  /* ── 开篇正文 ── */
+  .note-body {
+    font-size: 17px;
+  }
+  .note-body .dropcap {
+    font-size: 56px;
+  }
+
+  /* ── 各目的地板块标题 ── */
+  .course-header {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+  }
+  .course-kind {
+    display: none;
+  }
+  .course-numeral {
+    font-size: 32px;
+  }
+
+  /* ── 菜单条目 ── */
+  .item { grid-template-columns: 1fr; gap: 4px; }
+  .item-main { flex-wrap: wrap; }
+  .item-name { font-size: 15px; }
+  .item-desc { white-space: normal; margin-left: 0; margin-top: 2px; flex-basis: 100%; font-size: 13px; }
+  .item-leader { display: none; }
+  .item-detail { padding-left: 0; font-size: 11px; }
+
+  /* ── 图片画廊 ── */
+  .gallery .gallery-img {
+    width: 72vw;
+    height: 54vw;
+  }
+  .gallery .gallery-img.wide {
+    width: 86vw;
+    height: 54vw;
+  }
+  .gallery .gallery-img.portrait {
+    width: 56vw;
+    height: 75vw;
+  }
+  .gallery .gallery-img.tall {
+    width: 56vw;
+    height: 72vw;
+  }
+
+  /* ── 天气 & 预算 ── */
+  .practicals { grid-template-columns: 1fr; }
+  .practicals > div + div { border-left: none; border-top: 1px solid var(--rule); }
+  .practicals .val { font-size: 15px; }
+
+  /* ── 地图 ── */
+  .map-section .sheet {
+    padding: 24px 12px;
+  }
+  .map-svg .city-name { font-size: 13px; }
+  .map-svg .city-han  { font-size: 9px; }
+
+  /* ── 交通 & 预算总表（La Nota）── */
+  .nota h3 {
+    font-size: 36px;
+  }
+  .nota-grid { grid-template-columns: 1fr; gap: 24px; }
+  .leg-from { font-size: 15px; }
+
+  /* ── 语言切换按钮 ── */
+  #lang-toggle {
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  /* ── 古风边框：手机上精简 ── */
+  .framed::before, .framed::after,
+  .framed > .corner-tl, .framed > .corner-tr,
+  .framed > .corner-bl, .framed > .corner-br {
+    display: none;
+  }
+}
 
   /* ── Mobile responsiveness (additive overrides) ─────────────────────── */
   html, body { max-width: 100%; overflow-x: hidden; }

@@ -61,7 +61,7 @@
   .sheet {
     max-width: 880px;
     margin: 0 auto;
-    padding: 48px 64px;
+    padding: 32px 64px;
     position: relative;
   }
 
@@ -70,7 +70,7 @@
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 80px 32px 60px;
+    padding: 72px 32px 20px;
     position: relative;
   }
   .cover-inner { max-width: 640px; }
@@ -154,8 +154,8 @@
   .note {
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
-    padding: 44px 0;
-    margin: 0 0 0 0;
+    padding: 28px 0;
+    margin: 0;
   }
   .note-label {
     font-family: var(--mono);
@@ -196,7 +196,7 @@
 
   /* ── Course section ────────────────────────────────────────────────── */
   .course {
-    padding: 52px 0;
+    padding: 36px 0;
     border-bottom: 1px solid var(--rule);
   }
   .course:last-of-type { border-bottom: none; }
@@ -287,13 +287,10 @@
   /* ── Menu items (dot leaders) ──────────────────────────────────────── */
   .items { margin: 0; padding: 0; list-style: none; }
   .item {
-    display: flex;
-    align-items: baseline;
-    gap: 0;
-    padding: 12px 0;
+    display: block;
+    padding: 10px 0;
     border-top: 1px solid var(--rule-soft);
   }
-  .item-main { flex: 0 1 auto; }
   .item:first-child { border-top: none; }
 
   .item-main {
@@ -307,17 +304,18 @@
     font-weight: 400;
     color: var(--ink);
     white-space: nowrap;
+    flex: 0 0 auto;
   }
   .item-desc {
     font-family: var(--serif-body);
     font-style: italic;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--ink-soft);
-    margin-left: 12px;
-    min-width: 0;
+    margin-top: 2px;
+    display: block;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .item-leader {
     flex: 1;
@@ -742,12 +740,11 @@
   }
 
   /* ── 菜单条目 ── */
-  .item { grid-template-columns: 1fr; gap: 4px; }
-  .item-main { flex-wrap: wrap; }
-  .item-name { font-size: 15px; }
-  .item-desc { white-space: normal; margin-left: 0; margin-top: 2px; flex-basis: 100%; font-size: 13px; }
+  .item { padding: 8px 0; }
+  .item-name { font-size: 16px; }
+  .item-desc { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .item-leader { display: none; }
-  .item-detail { padding-left: 0; font-size: 11px; }
+  .item-detail { display: none; }
 
   /* ── 图片画廊 ── */
   .gallery .gallery-img {
@@ -858,10 +855,10 @@ prepared for friends from Rome.</p>
       <p class="tagline" data-it="Dalla costa orientale al cuore imperiale, poi a ovest verso le montagne.">East coast inland to imperial heart, then west into the mountains.</p>
     </div>
 
-    <svg class="map-svg" viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" aria-label="Map of China with our four stops">
+    <svg class="map-svg" viewBox="0 0 760 427" xmlns="http://www.w3.org/2000/svg" aria-label="Map of China with our four stops">
       <!-- decorative outer rule -->
-      <rect x="6" y="6" width="748" height="458" fill="none" stroke="rgba(26,20,16,0.18)" stroke-width="0.6"/>
-      <rect x="14" y="14" width="732" height="442" fill="none" stroke="rgba(26,20,16,0.10)" stroke-width="0.4"/>
+      <rect x="6" y="6" width="748" height="415" fill="none" stroke="rgba(26,20,16,0.18)" stroke-width="0.6"/>
+      <rect x="14" y="14" width="732" height="399" fill="none" stroke="rgba(26,20,16,0.10)" stroke-width="0.4"/>
 
       <!-- China silhouette (stylised) -->
       <path class="land" d="
@@ -940,7 +937,7 @@ prepared for friends from Rome.</p>
       </g>
 
       <!-- Vermillion seal cartouche (bottom right) -->
-      <g transform="translate(640, 405)">
+      <g transform="translate(640, 388)">
         <rect class="seal-box" x="-46" y="-26" width="92" height="52"/>
         <rect class="seal-box" x="-42" y="-22" width="84" height="44" opacity="0.5"/>
         <text class="seal-text" x="0" y="-2">A.D. 2026</text>
@@ -976,15 +973,15 @@ prepared for friends from Rome.</p>
 
       <!-- City: Mt Gongga (4) -->
       <g>
-        <line x1="354" y1="361" x2="248" y2="398" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
+        <line x1="354" y1="361" x2="248" y2="382" stroke="var(--ink-soft)" stroke-width="0.6" opacity="0.5"/>
         <circle class="pin" cx="354" cy="361" r="11"/>
         <text class="pin-num" x="354" y="361">4</text>
-        <text class="city-name" x="244" y="402" text-anchor="end">Mt Gongga</text>
-        <text class="city-han"  x="244" y="418" text-anchor="end">贡 嘎 山</text>
+        <text class="city-name" x="244" y="384" text-anchor="end">Mt Gongga</text>
+        <text class="city-han"  x="244" y="398" text-anchor="end">贡 嘎 山</text>
       </g>
 
       <!-- Legend -->
-      <g transform="translate(70, 438)">
+      <g transform="translate(70, 406)">
         <line x1="0" y1="0" x2="36" y2="0" class="route"/>
         <text class="legend-line" x="46" y="4">— our route</text>
         <circle class="pin" cx="120" cy="0" r="6"/>
